@@ -2,7 +2,7 @@
 taf.library("icesVMS")
 
 # icesVMS::update_token("colin")
-vms_sar <- icesVMS::get_sar_map("Bay of Biscay and the Iberian Coast")
+vms_sar <- icesVMS::get_sar_map("Azores")
 
 # convert to sf
 vms_sar$wkt <- sf::st_as_sfc(vms_sar$wkt)
