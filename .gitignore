@@ -27,3 +27,14 @@ vignettes/*.pdf
 # R Environment Variables
 .Renviron
 .Rproj.user
+*.Rproj
+
+# TAF
+/bootstrap/data/
+/bootstrap/library/
+/bootstrap/software/
+/data/
+/model/
+/output/
+/report/
+
