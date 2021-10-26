@@ -1,0 +1,173 @@
+COMMON_NAME,GUILD,SPECIES_NAME,SPECIES_CODE
+Brown moray,Demersal,Gymnothorax unicolor,AGK
+Albacore,Pelagic,Thunnus alalunga,ALB
+Thresher,Elasmobranchs,Alopias vulpinus,ALV
+Greater amberjack,Pelagic,Seriola dumerili,AMB
+Amberjacks nei,Pelagic,Seriola spp,AMX
+Annular seabream,Demersal,Diplodus annularis,ANN
+Aquatic plants nei,Benthic,Plantae aquaticae,APL
+"Cardinalfishes, etc. nei",undefined,Apogonidae,APO
+Barracudas nei,Demersal,Sphyraena spp,BAR
+Combers nei,Demersal,Serranus spp,BAS
+Bigeye tuna,Pelagic,Thunnus obesus,BET
+Pouting(=Bib),undefined,Trisopterus luscus,BIB
+"Marlins,sailfishes,etc. nei",Pelagic,Istiophoridae,BIL
+Black marlin,Pelagic,Makaira indica,BLM
+Bluefish,undefined,Pomatomus saltatrix,BLU
+Bogue,Pelagic,Boops boops,BOG
+Atlantic bonito,Pelagic,Sarda sarda,BON
+Black seabream,Demersal,Spondyliosoma cantharus,BRB
+Blackbelly rosefish,Demersal,Helicolenus dactylopterus,BRF
+Blue shark,Elasmobranchs,Prionace glauca,BSH
+"Groupers, seabasses nei",Demersal,Serranidae,BSX
+Bigeye thresher,Elasmobranchs,Alopias superciliosus,BTH
+Alfonsino,Demersal,Beryx decadactylus,BXD
+Splendid alfonsino,Demersal,Beryx splendens,BYS
+Cartilaginous fishes nei,Elasmobranchs,Chondrichthyes,CAR
+Comber,Demersal,Serranus cabrilla,CBR
+Clupeoids nei,undefined,Clupeoidei,CLU
+Shi drum,undefined,Umbrina cirrosa,COB
+Common edible cockle,undefined,Cerastoderma edule,COC
+European conger,Demersal,Conger conger,COE
+Common prawn,undefined,Palaemon serratus,CPR
+Marine crabs nei,Benthic,Brachyura,CRA
+Edible crab,Benthic,Cancer pagurus,CRE
+Edible crab,undefined,Cancer pagurus,CRE
+Green crab,undefined,Carcinus maenas,CRG
+Crangonid shrimps nei,Demersal,Crangonidae,CRN
+Marine crustaceans nei,Benthic,Crustacea,CRU
+Common two-banded seabream,Demersal,Diplodus vulgaris,CTB
+Common cuttlefish,Pelagic,Sepia officinalis,CTC
+Grooved carpet shell,Benthic,Ruditapes decussatus,CTG
+Pullet carpet shell,undefined,Venerupis pullastra,CTS
+Birdbeak dogfish,Demersal,Deania calcea,DCA
+Common dentex,Demersal,Dentex dentex,DEC
+Large-eye dentex,Demersal,Dentex macrophthalmus,DEL
+Dentex nei,Demersal,Dentex spp,DEX
+Dogfishes and hounds nei,Demersal,"Squalidae, Scyliorhinidae",DGH
+Dogfish sharks nei,Demersal,Squalidae,DGX
+Common dolphinfish,Pelagic,Coryphaena hippurus,DOL
+Demersal percomorphs nei,Demersal,Perciformes,DPX
+Eelpout,undefined,Zoarces viviparus,ELP
+Black cardinal fish,Demersal,Epigonus telescopus,EPI
+Common carp,undefined,Cyprinus carpio,FCP
+Finfishes nei,undefined,Osteichthyes,FIN
+Flatfishes nei,undefined,Pleuronectiformes,FLX
+Forkbeard,Demersal,Phycis phycis,FOR
+Forkbeards nei,Demersal,Phycis spp,FOX
+Northern pike,undefined,Esox lucius,FPI
+Frigate tuna,Pelagic,Auxis thazard,FRI
+Gadiformes nei,Demersal,Gadiformes,GAD
+Garfish,undefined,Belone belone,GAR
+"Snake mackerels, escolars nei",undefined,Gempylidae,GEP
+Brazilian groupers nei,undefined,Mycteroperca spp,GPB
+Dusky grouper,Demersal,Epinephelus marginatus,GPD
+Groupers nei,Demersal,Epinephelus spp,GPX
+Groundfishes nei,undefined,Osteichthyes,GRO
+Gulper shark,Elasmobranchs,Centrophorus granulosus,GUP
+"Gurnards, searobins nei",undefined,Triglidae,GUX
+Imperial blackfish,undefined,Schedophilus ovalis,HDV
+Hakes nei,Demersal,Merluccius spp,HKX
+Two-row rock shell,undefined,Thais haemastoma,HQM
+Aquatic invertebrates nei,undefined,Invertebrata,INV
+Jack and horse mackerels nei,Pelagic,Trachurus spp,JAX
+John dory,Demersal,Zeus faber,JOD
+Silvery John dory,undefined,Zenopsis conchifer,JOS
+Kingklip,undefined,Genypterus capensis,KCP
+Bermuda sea chub,undefined,Kyphosus sectatrix,KYS
+European lobster,Benthic,Homarus gammarus,LBE
+European lobster,undefined,Homarus gammarus,LBE
+Escolar,undefined,Lepidocybium flavobrunneum,LEC
+Lings nei,Demersal,Molva spp,LNZ
+Lings nei,undefined,Molva spp,LNZ
+Limpets nei,Benthic,Patella spp,LPZ
+Mackerels nei,Pelagic,Scombridae,MAX
+Scomber mackerels nei,Pelagic,Scomber spp,MAZ
+Golden perch,undefined,Macquaria ambigua,MCA
+Meagre,undefined,Argyrosomus regius,MGR
+Thicklip grey mullet,undefined,Chelon labrosus,MLR
+Mediterranean moray,Demersal,Muraena helena,MMH
+Monkfishes nei,undefined,Lophius spp,MNZ
+Marine molluscs nei,Benthic,Mollusca,MOL
+Moras nei,Demersal,Moridae,MOR
+"Mackerel sharks,porbeagles nei",Elasmobranchs,Lamnidae,MSK
+"Mackerel sharks,porbeagles nei",undefined,Lamnidae,MSK
+Murex,Benthic,Murex spp,MUE
+Mullets nei,undefined,Mugilidae,MUL
+Red mullet,Pelagic,Mullus barbatus,MUT
+Common octopus,Benthic,Octopus vulgaris,OCC
+"Octopuses, etc. nei",Benthic,Octopodidae,OCT
+Oilfish,Pelagic,Ruvettus pretiosus,OIL
+Cupped oysters nei,undefined,Crassostrea spp,OYC
+European flat oyster,Benthic,Ostrea edulis,OYF
+Pacific cupped oyster,undefined,Crassostrea gigas,OYG
+Common pandora,Demersal,Pagellus erythrinus,PAC
+Pelagic fishes nei,Pelagic,Osteichthyes,PEL
+Penaeus shrimps nei,Benthic,Penaeus spp,PEN
+Atlantic pomfret,Pelagic,Brama brama,POA
+Offshore rockfish,Demersal,Pontinus kuhlii,POI
+Pompano,undefined,Trachinotus ovatus,POP
+Pompanos nei,undefined,Trachinotus spp,POX
+Pelagic percomorphs nei,Demersal,Perciformes,PPX
+Parrotfish,Demersal,Sparisoma cretense,PRR
+Pink spiny lobster,Benthic,Palinurus mauritanicus,PSL
+Atlantic redfishes nei,Demersal,Sebastes spp,RED
+Common mora,Demersal,Mora moro,RIB
+Red porgy,Demersal,Pagrus pagrus,RPG
+Red scorpionfish,Demersal,Scorpaena scrofa,RSE
+Requiem sharks nei,Pelagic,Carcharhinidae,RSK
+Requiem sharks nei,undefined,Carcharhinidae,RSK
+Atlantic sailfish,Pelagic,Istiophorus albicans,SAI
+Atlantic saury,Pelagic,Scomberesox saurus,SAU
+Axillary seabream,Demersal,Pagellus acarne,SBA
+Gilthead seabream,Demersal,Sparus aurata,SBG
+Bluntnose sixgill shark,Elasmobranchs,Hexanchus griseus,SBL
+Pargo breams nei,Demersal,Pagrus spp,SBP
+"Porgies, seabreams nei",Demersal,Sparidae,SBX
+Great Atlantic scallop,Benthic,Pecten maximus,SCE
+Spinous spider crab,Benthic,Maja squinado,SCR
+Starry smooth-hound,undefined,Mustelus asterias,SDS
+Silver scabbardfish,Demersal,Lepidopus caudatus,SFS
+Bramble shark,Elasmobranchs,Echinorhinus brucus,SHB
+Bramble shark,undefined,Echinorhinus brucus,SHB
+Allis and twaite shads,undefined,"Alosa alosa, A. fallax",SHD
+Raja rays nei,Demersal,Raja spp,SKA
+Various sharks nei,Elasmobranchs,Selachimorpha (Pleurotremata),SKH
+Skipjack tuna,Pelagic,Katsuwonus pelamis,SKJ
+Salema,undefined,Sarpa salpa,SLM
+Common spiny lobster,Benthic,Palinurus elephas,SLO
+Salmonoids nei,undefined,Salmonoidei,SLX
+Shortfin mako,Elasmobranchs,Isurus oxyrinchus,SMA
+Smooth-hound,Pelagic,Mustelus mustelus,SMD
+Snappers nei,undefined,Lutjanus spp,SNA
+Snipefishes nei,undefined,Macroramphosidae,SNI
+Scalloped hammerhead,Demersal,Sphyrna lewini,SPL
+Hammerhead sharks nei,Demersal,Sphyrna spp,SPN
+Hammerhead sharks nei,Elasmobranchs,Sphyrna spp,SPN
+Smooth hammerhead,Demersal,Sphyrna zygaena,SPZ
+Common squids nei,Pelagic,Loligo spp,SQC
+Veined squid,Pelagic,Loligo forbesi,SQF
+Northern shortfin squid,undefined,Illex illecebrosus,SQI
+Various squids nei,Pelagic,"Loliginidae, Ommastrephidae",SQU
+Various squids nei,undefined,"Loliginidae, Ommastrephidae",SQU
+Sargo breams nei,Demersal,Diplodus spp,SRG
+Striped venus,undefined,Chamelea gallina,SVE
+White seabream,Demersal,Diplodus sargus,SWA
+Swordfish,Pelagic,Xiphias gladius,SWO
+"Threadfins, tasselfishes nei",undefined,Polynemidae,THF
+Electric rays nei,undefined,Torpedinidae,TOD
+Torpedo rays,undefined,Torpedo spp,TOE
+"Jacks, crevalles nei",undefined,Caranx spp,TRE
+Grey triggerfish,undefined,Balistes carolinensis,TRG
+"Triggerfishes, durgons nei",undefined,Balistidae,TRI
+White trevally,Demersal,Pseudocaranx dentex,TRZ
+True tunas nei,Pelagic,Thunnus spp,TUS
+Tuna-like fishes nei,Pelagic,Scombroidei,TUX
+Ballan wrasse,undefined,Labrus bergylta,USB
+Spiny lobsters nei,Benthic,Palinuridae,VLO
+Whelk,undefined,Buccinum undatum,WHE
+Atlantic white marlin,Pelagic,Tetrapturus albidus,WHM
+"Wrasses, hogfishes, etc. nei",undefined,Labridae,WRA
+Wreckfish,Demersal,Polyprion americanus,WRF
+Yellowfin tuna,Pelagic,Thunnus albacares,YFT
+Mediterranean slipper lobster,Benthic,Scyllarides latus,YLL
