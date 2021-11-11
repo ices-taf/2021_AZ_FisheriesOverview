@@ -18,6 +18,7 @@ guild <- guild_trends(clean_sag)
 write.taf(trends, dir = "model")
 write.taf(guild, dir = "model")
 
+
 #B.Trends and current catches, landings and discards
 
 

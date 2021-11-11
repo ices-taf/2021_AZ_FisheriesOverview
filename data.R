@@ -7,8 +7,8 @@ library(dplyr)
 mkdir("data")
 
 # load species list
-species_list <- read.taf("bootstrap/data/FAO_ASFIS_species/species_list.csv")
-sid <- read.taf("bootstrap/data/ICES_StockInformation/sid.csv")
+species_list <- read.taf("bootstrap/initial/data/FAO_ASFIS_species/species_list.csv")
+sid <- read.taf("bootstrap/initial/data/ICES_StockInformation/sid.csv")
 
 # 1: ICES official cath statistics
 
@@ -40,9 +40,11 @@ write.taf(catch_dat, dir = "data", quote = TRUE)
 
 # 2: STECF effort and landings
 
-effort <- read.taf("bootstrap/data/STECF_effort_data.csv", check.names = TRUE)
+effort <- read.taf("bootstrap/initial/data/STECF_effort_data.csv", check.names = TRUE)
+effort <- read.taf("bootstrap/initial/data/vms_effort_data.csv", check.names = TRUE) #  I am running this cause I don't have the STECF data
 
 landings <- read.taf("bootstrap/initial/data/STECF_landings_data.csv", check.names = TRUE)
+landings <- read.taf("bootstrap/initial/data/vms_landings_data.csv", check.names = TRUE)#  I am running this cause I don't have the STECF data
 
 frmt_effort <- format_stecf_effort(effort)
 effort <- effort %>% rename('regulated.area' = 'regulated area')
@@ -58,9 +60,9 @@ write.taf(frmt_landings, dir = "data", quote = TRUE)
 
 
 # 3: SAG
-sag_sum <- read.taf("bootstrap/data/SAG_data/SAG_summary.csv")
-sag_refpts <- read.taf("bootstrap/data/SAG_data/SAG_refpts.csv")
-sag_status <- read.taf("bootstrap/data/SAG_data/SAG_status.csv")
+sag_sum <- read.taf("bootstrap/initial/data/SAG_data/SAG_summary.csv")
+sag_refpts <- read.taf("bootstrap/initial/data/SAG_data/SAG_refpts.csv")
+sag_status <- read.taf("bootstrap/initial/data/SAG_data/SAG_status.csv")
 
 StockList <- c("thr.27.nea",
                "bsf.27.nea",

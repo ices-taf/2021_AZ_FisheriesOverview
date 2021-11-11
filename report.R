@@ -8,6 +8,10 @@ library(tidyr)
 
 mkdir("report")
 
+
+
+cap_year <- 2021
+cap_month <- "October"
 ##########
 #Load data
 ##########
@@ -20,29 +24,29 @@ catch_trends <- read.taf("model/catch_trends.csv")
 #error with number of columns, to check
 clean_status <- read.taf("data/clean_status.csv")
 
-effort_dat <- read.taf("bootstrap/data/ICES_vms_effort_data/ICES_vms_effort_data.csv")
-landings_dat <- read.taf("bootstrap/data/ICES_vms_landings_data/ICES_vms_landings_data.csv")
+effort_dat <- read.taf("bootstrap/initial/data/ICES_vms_effort_data/vms_effort_data.csv")
+landings_dat <- read.taf("bootstrap/initial/data/ICES_vms_landings_data/vms_landings_data.csv")
 
 
 ices_areas <- 
-  sf::st_read("bootstrap/data/ICES_areas/areas.csv", 
+  sf::st_read("bootstrap/initial/data/ICES_areas/areas.csv", 
               options = "GEOM_POSSIBLE_NAMES=WKT", crs = 4326)
 ices_areas <- dplyr::select(ices_areas, -WKT)
 
 ecoregion <- 
-  sf::st_read("bootstrap/data/ICES_ecoregions/ecoregion.csv", 
+  sf::st_read("bootstrap/initial/data/ICES_ecoregions/ecoregion.csv", 
               options = "GEOM_POSSIBLE_NAMES=WKT", crs = 4326)
 ecoregion <- dplyr::select(ecoregion, -WKT)
 
 # read vms fishing effort
 effort <-
-  sf::st_read("bootstrap/data/ICES_vms_effort_map/vms_effort.csv",
+  sf::st_read("bootstrap/initial/data/ICES_vms_effort_map/vms_effort.csv",
                options = "GEOM_POSSIBLE_NAMES=wkt", crs = 4326)
 effort <- dplyr::select(effort, -WKT)
 
 # read vms swept area ratio
 sar <-
-  sf::st_read("bootstrap/data/ICES_vms_sar_map/vms_sar.csv",
+  sf::st_read("bootstrap/initial/data/ICES_vms_sar_map/vms_sar.csv",
                options = "GEOM_POSSIBLE_NAMES=wkt", crs = 4326)
 sar <- dplyr::select(sar, -WKT)
 
@@ -51,7 +55,7 @@ sar <- dplyr::select(sar, -WKT)
 ###############
 
 plot_ecoregion_map(ecoregion, ices_areas)
-ggplot2::ggsave("2019_BI_FO_Figure1.png", path = "report", width = 170, height = 200, units = "mm", dpi = 300)
+ggplot2::ggsave("2021_AZ_FO_Figure1.png", path = "report", width = 170, height = 200, units = "mm", dpi = 300)
 
 #################################################
 ##1: ICES nominal catches and historical catches#
@@ -95,14 +99,14 @@ catch_dat$GUILD <- tolower(catch_dat$GUILD)
 unique(catch_dat$GUILD)
 
 # quick fix to put mussels into others
-catch_dat2$COMMON_NAME[which(catch_dat2$COMMON_NAME == "Blue mussel")] <- "other"
+catch_dat$COMMON_NAME[which(catch_dat$COMMON_NAME == "Blue mussel")] <- "other"
 
-plot_catch_trends(catch_dat2, type = "COMMON_NAME", line_count = 6, plot_type = "line")
-ggplot2::ggsave("2019_BI_FO_Figure5.png", path = "report/", width = 170, height = 100.5, units = "mm", dpi = 300)
+plot_catch_trends(catch_dat, type = "COMMON_NAME", line_count = 6, plot_type = "line")
+ggplot2::ggsave("2021_AZ_FO_Figure5.png", path = "report/", width = 170, height = 100.5, units = "mm", dpi = 300)
 
 #data
 dat <- plot_catch_trends(catch_dat, type = "COMMON_NAME", line_count = 6, plot_type = "line", return_data = TRUE)
-write.taf(dat, "2019_BI_FO_Figure5.csv", dir = "report")
+write.taf(dat, "2021_AZ_FO_Figure5.csv", dir = "report")
 
 
 #~~~~~~~~~~~~~~~#
@@ -110,11 +114,11 @@ write.taf(dat, "2019_BI_FO_Figure5.csv", dir = "report")
 #~~~~~~~~~~~~~~~#
 #Plot
 plot_catch_trends(catch_dat, type = "COUNTRY", line_count = 3, plot_type = "area")
-ggplot2::ggsave("2019_BI_FO_Figure2.png", path = "report/", width = 178, height = 130, units = "mm", dpi = 300)
+ggplot2::ggsave("2021_AZ_FO_Figure2.png", path = "report/", width = 178, height = 130, units = "mm", dpi = 300)
 
 #data
 dat <- plot_catch_trends(catch_dat, type = "COUNTRY", line_count = 3, plot_type = "area", return_data = TRUE)
-write.taf(dat, file= "2019_BI_FO_Figure2.csv", dir = "report")
+write.taf(dat, file= "2021_AZ_FO_Figure2.csv", dir = "report")
 
 #~~~~~~~~~~~~~~~#
 # By guild
@@ -129,11 +133,11 @@ unique(check$COMMON_NAME)
 #plenty of molluscs here
 
 
-ggplot2::ggsave("2019_BI_FO_Figure4.png", path = "report/", width = 178, height = 130, units = "mm", dpi = 300)
+ggplot2::ggsave("2021_AZ_FO_Figure4.png", path = "report/", width = 178, height = 130, units = "mm", dpi = 300)
 
 #data
 dat <- plot_catch_trends(catch_dat, type = "GUILD", line_count = 5, plot_type = "line", return_data = TRUE)
-write.taf(dat, file= "2019_BI_FO_Figure4.csv", dir = "report")
+write.taf(dat, file= "2021_AZ_FO_Figure4.csv", dir = "report")
 
 ################################
 ## 2: STECF effort and landings#
@@ -186,16 +190,16 @@ unique(trends$FisheriesGuild)
 
 # 1. Demersal
 #~~~~~~~~~~~
-plot_stock_trends(trends, guild="demersal", cap_year = 2019, cap_month = "November", return_data = FALSE)
-ggplot2::ggsave("2019_BI_FO_Figure12b.png", path = "report/", width = 178, height = 130, units = "mm", dpi = 300)
+plot_stock_trends(trends, guild="demersal", cap_year = 2021, cap_month = "October", return_data = FALSE)
+ggplot2::ggsave("2021_AZ_FO_Figure12b.png", path = "report/", width = 178, height = 130, units = "mm", dpi = 300)
 
 dat <- plot_stock_trends(trends, guild="demersal", cap_year = 2019, cap_month = "November", return_data = TRUE)
 write.taf(dat, file ="2019_BI_FO_Figure12b.csv", dir = "report")
 
 # 2. Pelagic
 #~~~~~~~~~~~
-plot_stock_trends(trends, guild="pelagic", cap_year = 2019, cap_month = "November", return_data = FALSE)
-ggplot2::ggsave("2019_BI_FO_Figure12c.png", path = "report/", width = 178, height = 130, units = "mm", dpi = 300)
+plot_stock_trends(trends, guild="pelagic", cap_year, cap_month, return_data = FALSE)
+ggplot2::ggsave("2021_AZ_FO_Figure12c.png", path = "report/", width = 178, height = 130, units = "mm", dpi = 300)
 
 dat <- plot_stock_trends(trends, guild="pelagic", cap_year = 2019, cap_month = "November", return_data = TRUE)
 write.taf(dat,file ="2019_BI_FO_Figure12c.csv", dir = "report")
@@ -210,17 +214,17 @@ write.taf(dat, file ="2019_BI_FO_Figure12a.csv", dir = "report" )
 
 # 4. Elasmobranch
 #~~~~~~~~~~~
-plot_stock_trends(trends, guild="elasmobranch", cap_year = 2019, cap_month = "November",return_data = FALSE )
+plot_stock_trends(trends, guild="elasmobranch", cap_year, cap_month, return_data = FALSE )
 # time series is too long, represent from 1980
 
 ggplot2::ggsave("2019_BI_FO_Figure12d.png", path = "report/", width = 178, height = 130, units = "mm", dpi = 300)
 
 trends2 <- trends %>% filter(Year> 1980)
-plot_stock_trends(trends2, guild="elasmobranch", cap_year = 2019, cap_month = "November",return_data = FALSE )
-ggplot2::ggsave("2019_BI_FO_Figure12d_from1980.png", path = "report/", width = 178, height = 130, units = "mm", dpi = 300)
+plot_stock_trends(trends2, guild="elasmobranch", cap_year , cap_month ,return_data = FALSE )
+ggplot2::ggsave("2021_AZ_FO_Figure12d_from1980.png", path = "report/", width = 178, height = 130, units = "mm", dpi = 300)
 
-dat <- plot_stock_trends(trends, guild="elasmobranch", cap_year = 2019, cap_month = "November", return_data = TRUE)
-write.taf(dat, file ="2019_BI_FO_Figure12d.csv", dir = "report" )
+dat <- plot_stock_trends(trends, guild="elasmobranch", cap_year, cap_month , return_data = TRUE)
+write.taf(dat, file ="2021_AZ_FO_Figure12d.csv", dir = "report" )
 
 # 5. Benthic
 #~~~~~~~~~~~
@@ -438,38 +442,40 @@ ggplot2::ggsave("2019_BI_Figure7.png", path = "report/", width = 220.32, height 
 #D. ICES pies
 #~~~~~~~~~~~~~~~#
 
-plot_status_prop_pies(clean_status, "November", "2019")
+plot_status_prop_pies(clean_status, "October", "2021")
 
 # will make qual_green just green
 unique(clean_status$StockSize)
  
 clean_status$StockSize <- gsub("qual_RED", "RED", clean_status$StockSize)
 
-plot_status_prop_pies(clean_status, "November", "2019")
+plot_status_prop_pies(clean_status, "October", "2021")
 
-ggplot2::ggsave("2019_BI_FO_Figure10.png", path = "report/", width = 178, height = 178, units = "mm", dpi = 300)
+ggplot2::ggsave("2021_AZ_FO_Figure10.png", path = "report/", width = 178, height = 178, units = "mm", dpi = 300)
 
-dat <- plot_status_prop_pies(clean_status, "November", "2019", return_data = TRUE)
-write.taf(dat, file= "2019_BI_FO_Figure10.csv", dir = "report")
+dat <- plot_status_prop_pies(clean_status, "October", "2021", return_data = TRUE)
+write.taf(dat, file= "2021_AZ_FO_Figure10.csv", dir = "report")
 
 #~~~~~~~~~~~~~~~#
 #E. GES pies
 #~~~~~~~~~~~~~~~#
 #Need to change order and fix numbers
-plot_GES_pies(clean_status, catch_current, "November", "2019")
-ggplot2::ggsave("2019_BI_FO_Figure11.png", path = "report/", width = 178, height = 178, units = "mm", dpi = 300)
+plot_GES_pies(clean_status, catch_current, "October", "2021")
+ggplot2::ggsave("2021_AZ_FO_Figure11.png", path = "report/", width = 178, height = 178, units = "mm", dpi = 300)
 
-dat <- plot_GES_pies(clean_status, catch_current, "November", "2019", return_data = TRUE)
-write.taf(dat, file= "2019_BI_FO_Figure11.csv", dir = "report")
+dat <- plot_GES_pies(clean_status, catch_current, "October", "2021", return_data = TRUE)
+write.taf(dat, file= "2021_AZ_FO_Figure11.csv", dir = "report")
 
 #~~~~~~~~~~~~~~~#
 #F. ANNEX TABLE 
 #~~~~~~~~~~~~~~~#
 
 
-dat <- format_annex_table(clean_status, 2019)
+dat <- format_annex_table(clean_status, 2021)
+html_annex_table(dat,"AZ",2021)
 
-write.taf(dat, file = "2019_BI_FO_annex_table.csv", dir = "report")
+
+write.taf(dat, file = "2021_AZ_FO_annex_table.csv", dir = "report")
 
 # This annex table has to be edited by hand,
 # For SBL and GES only one values is reported, 

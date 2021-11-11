@@ -1,10 +1,18 @@
 
 library(icesTAF)
-taf.library(icesFO)
+library(icesFO)
 library(sf)
 library(ggplot2)
 library(dplyr)
 
+
+## Run utilies
+source("bootstrap/utilities.r")
+
+# set values for automatic naming of files:
+cap_year <- 2021
+cap_month <- "October"
+ecoreg_code <- "AZ"
 
 ###########
 ##Load data
@@ -12,7 +20,7 @@ library(dplyr)
 
 # read vms fishing effort
 effort <-
-  sf::st_read("vms_effort.csv",
+  sf::st_read("bootstrap/initial/data/ICES_vms_effort_map/vms_effort.csv",
                options = "GEOM_POSSIBLE_NAMES=wkt", crs = 4326)
 effort <- dplyr::select(effort, -WKT)
 
@@ -25,7 +33,7 @@ sar <- dplyr::select(sar, -WKT)
 
 #set range of years in plots
 
-year_range = "2016-2019"
+year_range = "2018-2021"
 
 
 ###########
@@ -60,13 +68,13 @@ write_layer <- function(dat, fname) {
   zip(paste0("report/", fname, ".zip"), files, extras = "-j")
   file.remove(files)
 }
-write_layer(effort, paste0(year_cap, "_", ecoreg,"_FO_VMS_effort"))
+write_layer(effort, paste0(cap_year, "_", ecoreg_code,"_FO_VMS_effort"))
 
 # save plot
 plot_effort_map(effort, ecoregion) +
   ggtitle(paste0("Average MW Fishing hours ", year_range))
 
-ggplot2::ggsave(paste0(year_cap, "_", ecoreg,"_FO_VMS_effort.png"), path = "report", width = 170, height = 200, units = "mm", dpi = 300)
+ggplot2::ggsave(paste0(cap_year, "_", ecoreg_code,"_FO_VMS_effort.png"), path = "report", width = 170, height = 200, units = "mm", dpi = 300)
 
 #~~~~~~~~~~~~~~~#
 # A. Swept area map
