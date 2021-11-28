@@ -20,7 +20,7 @@ ecoreg_code <- "AZ"
 
 # read vms fishing effort
 effort <-
-  sf::st_read("bootstrap/initial/data/ICES_vms_effort_map/vms_effort.csv",
+  sf::st_read("vms_effort.csv",
                options = "GEOM_POSSIBLE_NAMES=wkt", crs = 4326)
 effort <- dplyr::select(effort, -WKT)
 
