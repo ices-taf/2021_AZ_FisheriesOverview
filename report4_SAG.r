@@ -1,17 +1,10 @@
 
 library(icesTAF)
-library(icesFO)
+taf.library(icesFO)
 library(sf)
 library(ggplot2)
 library(dplyr)
 
-## Run utilies
-source("bootstrap/utilities.r")
-
-# set values for automatic naming of files:
-cap_year <- 2021
-cap_month <- "October"
-ecoreg_code <- "AZ"
 
 ##########
 #Load data
@@ -305,9 +298,8 @@ write.taf(dat, file = paste0(year_cap,"_",ecoreg, "_FO_SAG_GESpies.csv"),dir ="r
 
 dat <- format_annex_table(clean_status, year)
 
-write.taf(dat, file = file_name(cap_year,ecoreg_code,"SAG_annex_table", ext = "csv"), dir = "report", quote= TRUE)
+write.taf(dat, file = paste0(year_cap,"_", ecoreg, "_FO_SAG_annex_table.csv"), dir = "report", quote= TRUE)
 
-html_annex_table(dat, cap_year, ecoreg_code)
 # This annex table has to be edited by hand,
 # For SBL and GES only one values is reported,
 # the one in PA for SBL and the one in MSY for GES
